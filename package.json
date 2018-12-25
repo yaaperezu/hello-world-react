@@ -10,7 +10,8 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "webpack-cli": "^3.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,9 +38,12 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.28.2",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-split-chunks": "^0.2.1"
   },
   "scripts": {
-    "start": "babel-node src/server"
+    "start": "babel-node src/server",
+    "production": "NODE_ENV=production BABEL_ENV=production npm run build && npm start",
+    "build": "NODE_ENV=production webpack --config webpack.config.babel.js"
   }
 }
